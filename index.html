@@ -18,8 +18,8 @@ that computer's own apps in step with their owner's Google Calendar.</p>
 <h2>What it does</h2>
 <ul>
  <li>It reads the events of every calendar shown in the owner's Google
-     Calendar, from yesterday to 30 days ahead.</li>
- <li>It finds events that overlap, so the owner can see a clash.</li>
+     Calendar, from the last 24 hours to 30 days ahead.</li>
+ <li>It finds busy events that overlap, so the owner can see a clash.</li>
  <li>Other programs on the same computer can ask it whether a time slot is free.</li>
  <li>Those programs can add their own events, for example a class timetable or a
      work roster. The events go into one calendar named "App Sync".</li>
@@ -27,8 +27,9 @@ that computer's own apps in step with their owner's Google Calendar.</p>
 <h2>How it runs</h2>
 <p>The program runs a small web server for the other programs on that
 computer. It listens on <code>127.0.0.1</code> only, so nothing outside the
-computer can reach it. There is no remote server, no cloud service, no account
-and no sign-up. It is not offered to other people.</p>
+computer can reach it. There is no remote server and no cloud service. The
+program has no account and no sign-up of its own; the owner signs in with their
+own Google account. It is not offered as a service to other people.</p>
 <p><a href="privacy.html">Privacy policy</a></p>
 </body>
 </html>
