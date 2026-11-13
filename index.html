@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendar Sync</title>
+<style>
+ :root { color-scheme: light dark; }
+ body { margin: 0 auto; padding: 2rem 1rem; max-width: 38rem; font: 16px/1.6 system-ui, sans-serif; }
+ h1 { font-size: 1.6rem; }
+ code { font-size: 0.95em; }
+</style>
+</head>
+<body>
+<h1>Calendar Sync</h1>
+<p>Calendar Sync is a small personal program. It runs on one computer and keeps
+that computer's own apps in step with their owner's Google Calendar.</p>
+<h2>What it does</h2>
+<ul>
+ <li>It reads the calendars the owner can already see, for the next 30 days.</li>
+ <li>It finds events that overlap, so the owner can see a clash.</li>
+ <li>Other programs on the same computer can ask it whether a time slot is free.</li>
+ <li>Those programs can add their own events, for example a class timetable or a
+     work roster. The events go into one calendar named "App Sync".</li>
+</ul>
+<h2>How it runs</h2>
+<p>The program listens on <code>127.0.0.1</code> only, so nothing outside the
+computer can reach it. There is no server, no account and no sign-up. It is not
+offered to other people.</p>
+<p><a href="privacy.html">Privacy policy</a></p>
+</body>
+</html>
