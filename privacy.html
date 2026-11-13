@@ -17,22 +17,40 @@
 <p>Calendar Sync is a personal program that runs on one computer. This policy
 explains what it does with calendar data.</p>
 <h2>What it reads</h2>
-<p>With the owner's permission, it reads the Google Calendar events that the
-signed-in account can already see, for the next 30 days. It also creates and
-edits one calendar of its own, named "App Sync". It does not read or change any
-other calendar. The permissions it asks for are "See the events on all your
-calendars" and "Make secondary Google calendars, and see, create, change and
-delete events on them".</p>
+<p>With the owner's permission, it reads the events of every calendar that is
+shown in the owner's Google Calendar, from yesterday to 30 days ahead. It also
+creates one calendar of its own, named "App Sync", and writes events to that
+calendar. It writes to no other calendar.</p>
+<p>It asks for two permissions: "See the events on all your calendars", and
+"Make secondary Google calendars, and see, create, change and delete events on
+them".</p>
 <h2>Where the data goes</h2>
-<p>Nowhere. The data stays on the computer that runs the program. It is written
-to a file in the program's own folder, so other programs on that same computer
-can read it. The program listens on <code>127.0.0.1</code> only. It has no
-server, no database and no analytics, and it sends nothing to the author or to
-any third party.</p>
-<h2>Sign-in details</h2>
-<p>The Google sign-in token is stored in a file on that computer. The owner can
-remove it at any time by deleting the file, or by removing access in their
-Google Account under "Third-party apps and services".</p>
+<p>The data moves between the computer and the owner's own Google account, and
+nowhere else. The titles and times of events that overlap are also sent to an AI
+model that runs on the same computer, so that it can write a short note about
+the clash. That model is local, and it sends nothing out.</p>
+<p>The program runs a small web server for the other programs on that computer.
+It listens on <code>127.0.0.1</code> only, so nothing outside the computer can
+reach it. There is no remote server, no cloud service, no database and no
+analytics. It sends nothing to the author or to any other person or company.</p>
+<h2>What is kept on the computer</h2>
+<ul>
+ <li>The Google sign-in token, in <code>data\token.json</code>.</li>
+ <li>A copy of the events it last read, in <code>data\schedule.json</code>.</li>
+ <li>The clash notes and the id of the "App Sync" calendar, in
+     <code>data\state.json</code>.</li>
+</ul>
+<p>These files stay on the computer until the owner deletes them. The program
+sets no end date of its own.</p>
+<h2>Limited use</h2>
+<p>Calendar Sync uses the data it reads from Google only for the features
+described on this page. The data is not sold, not used for advertising, not used
+to train any model, and not given to any other person or company.</p>
+<h2>How to stop it</h2>
+<p>Delete <code>data\token.json</code> to stop the program from using the
+account. That file is only a local copy, so also open the Google Account page,
+go to "Third-party apps and services", and remove access to Calendar Sync. The
+second step is the one that revokes the permission at Google.</p>
 <h2>Who uses it</h2>
 <p>The author, on their own computer. The program is not offered to other
 people, and it is not available to download from this site. These pages exist so
@@ -40,5 +58,6 @@ that the Google sign-in screen can link to a description and to this policy.</p>
 <h2>Contact</h2>
 <p>Open an issue at
 <a href="https://github.com/RyanWeera/calendar-sync/issues">github.com/RyanWeera/calendar-sync/issues</a>.</p>
+<p><a href="index.html">Back to the home page</a></p>
 </body>
 </html>
